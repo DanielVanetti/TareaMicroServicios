@@ -1,11 +1,15 @@
+server:
+  port: 8081
+
 spring:
   application:
-    name: client-service
-  main:
-    allow-bean-definition-overriding: true
-server:
-  port: 8082
+    name: client
+
 eureka:
   client:
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://eureka:8761/eureka/
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
